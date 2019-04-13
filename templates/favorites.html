@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Nicestuff - Favorites{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p>This is where your liked stuff shows up... Atleast it should once Shaurya builds that thing.</p>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+  <br>
+  <p><a href="{% url 'home' %}">home</a></p>
+  <br>
+  <p><a href="{% url 'history' %}">history</a></p>
+{% else %}
+  <p>You are not logged in so we dont know what is your favorite... apart from money, <a href='https://jacksfilms.fandom.com/wiki/Biches'>biches</a> and dominoes cheese burst pizza.</p>
+  <br>
+  We are not sponsored by Audible.
+  <br>
+  <a href="{% url 'login' %}"> Login</a>
+  <br>
+  <a href="{% url 'signup' %}">Sign Up</a></p>
+
+{% endif %}
+{% endblock %}

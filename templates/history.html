@@ -1,33 +1,20 @@
 {% extends 'base.html' %}
 
-{% block title %}Nicestuff{% endblock %}
+{% block title %}Nicestuff - History{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
-  <br>
+  <p>This is where the history is made... errr... I mean... shows up.</p>
+  <br>   
   <p><a href="{% url 'favorites' %}">favorites</a></p>
   <br>
-  <p><a href="{% url 'history' %}">history</a></p>
-
+  <p><a href="{% url 'history' %}">home</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <p>You are not logged in, so no history for you anon.</p>
+ 
   <a href="{% url 'login' %}"> Login</a>
-  <br>
-  <br>
   <br>
   <a href="{% url 'signup' %}">Sign Up</a></p>
 

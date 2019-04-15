@@ -1,22 +1,32 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Nicestuff - Favorites{% endblock %}
+  </title>
+</head>
+<body>
+  <main>
+    {% block content %}
+      {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p>This is where your liked stuff shows up... Atleast it should once Shaurya builds that thing.</p>
+        <p><a href="{% url 'logout' %}">logout</a></p>
+        <br>
+        <p><a href="{% url 'home' %}">home</a></p>
+        <br>
+        <p><a href="{% url 'history' %}">history</a></p>
+      {% else %}
+        <p>You are not logged in so we dont know what is your favorite</p>
+        <br>
+        <a href="{% url 'login' %}"> Login</a>
+        <br>
+        <a href="{% url 'signup' %}">Sign Up</a></p>
+      
+      {% endif %}
+    {% endblock %}
+  </main>
+</body>
+</html>
 
-{% block title %}Nicestuff - Favorites{% endblock %}
 
-{% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p>This is where your liked stuff shows up... Atleast it should once Shaurya builds that thing.</p>
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <br>
-  <p><a href="{% url 'home' %}">home</a></p>
-  <br>
-  <p><a href="{% url 'history' %}">history</a></p>
-{% else %}
-  <p>You are not logged in so we dont know what is your favorite</p>
-  <br>
-  <a href="{% url 'login' %}"> Login</a>
-  <br>
-  <a href="{% url 'signup' %}">Sign Up</a></p>
-
-{% endif %}
-{% endblock %}

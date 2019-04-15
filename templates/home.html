@@ -1,35 +1,39 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Nicestuff{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+      {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">logout</a></p>
+        <br>
+        <p><a href="{% url 'favorites' %}">favorites</a></p>
+        <br>
+        <p><a href="{% url 'history' %}">history</a></p>
+      {% else %}
+        <p>You are not logged in</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'login' %}"> Login</a>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'signup' %}">Sign Up</a></p>
+      {% endif %}
+    {% endblock %}
+</body>
+</html>
 
-{% block title %}Nicestuff{% endblock %}
-
-{% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <br>
-  <p><a href="{% url 'favorites' %}">favorites</a></p>
-  <br>
-  <p><a href="{% url 'history' %}">history</a></p>
-
-{% else %}
-  <p>You are not logged in</p>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <a href="{% url 'login' %}"> Login</a>
-  <br>
-  <br>
-  <br>
-  <a href="{% url 'signup' %}">Sign Up</a></p>
-
-{% endif %}
-{% endblock %}

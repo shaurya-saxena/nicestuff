@@ -1,22 +1,30 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Nicestuff - History{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block content %}
+      {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">logout</a></p>
+        <p>This is where the history is made... errr... I mean... shows up.</p>
+        <br>   
+        <p><a href="{% url 'favorites' %}">favorites</a></p>
+        <br>
+        <p><a href="{% url 'history' %}">home</a></p>
+      {% else %}
+        <p>You are not logged in, so no history for you anon.</p>
+      
+        <a href="{% url 'login' %}"> Login</a>
+        <br>
+        <a href="{% url 'signup' %}">Sign Up</a></p>
+      
+      {% endif %}
+    {% endblock %}
+  </main>
+</body>
+</html>
 
-{% block title %}Nicestuff - History{% endblock %}
-
-{% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <p>This is where the history is made... errr... I mean... shows up.</p>
-  <br>   
-  <p><a href="{% url 'favorites' %}">favorites</a></p>
-  <br>
-  <p><a href="{% url 'history' %}">home</a></p>
-{% else %}
-  <p>You are not logged in, so no history for you anon.</p>
- 
-  <a href="{% url 'login' %}"> Login</a>
-  <br>
-  <a href="{% url 'signup' %}">Sign Up</a></p>
-
-{% endif %}
-{% endblock %}

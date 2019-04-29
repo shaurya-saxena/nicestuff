@@ -4,15 +4,58 @@
   <meta charset="utf-8">
   <title>{% block title %}Login{% endblock %}
   </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+    @import url("https://fonts.googleapis.com/css?family=Raleway");
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    #bigbox {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+    }
+    #box {
+      margin: 0;
+      padding: 5%;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0em 0em 10em 1em lightgray;
+    }
+    #heading {
+      font-family: 'Abril Fatface';
+      padding-bottom: 40px; 
+    }
+    #tiny-message{
+      font-size: 0.8em;
+    }
+  </style>
 </head>
 <body>
-  {% block content %}
-    <h2>Login</h2>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Login</button>
-    </form>
-  {% endblock %}  
+  <div id="bigbox">
+    <div id="box">
+      <h3 id="heading">Nicestuff</h3>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <center><button type="submit" class="btn btn-success btn-md" style="width: 100%;">Login</button></center>
+      </form>
+      <br>
+      <span id="tiny-message"> Don't have an account? <a href="/accounts/signup">Sign Up</a> instead.</span>
+    </div>
+  </div>
 </body>
 </html>

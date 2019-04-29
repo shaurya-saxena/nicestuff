@@ -4,26 +4,71 @@
   <meta charset="utf-8">
   <title>{% block title %}Sign Up{% endblock %}</title>
 
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-    }
-      
+      @import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+      @import url("https://fonts.googleapis.com/css?family=Raleway");
   
-  </style>
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      #bigbox {
+        width: 100%;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+      }
+      #box {
+        margin: 0;
+        padding: 40px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0em 0em 10em 1em lightgray;
+      }
+      #heading {
+        font-family: 'Abril Fatface';
+        padding: 10px;
+      }
+      #tiny-message{
+        font-size: 0.8em;
+      }
+      #label{
+        font-size: 0.7em;
+      }
+
+    </style>
 </head>
 <body>
-    {% block content %}
-    <h2>Sign up</h2>
+    <div id="bigbox">
+        <div id="box">
+          <h3 id="heading">Nicestuff</h3>
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Sign up</button>
-    </form>
-    {% endblock %}
+      {% for field in form %}
+      <span>
+        <br><span id="label">{{ field.label_tag }}</span>
+        <center>{{ field }}</center>
+        {% for error in field.errors %}
+          <br><center><span><small style="color: lightcoral; font-size: 0.7em">{{ error }}</small></center></span>
+        {% endfor %}
+      </span>
+    {% endfor %}
+      <br>
+    <center><button type="submit" class="btn btn-primary btn-md" style="width: 100%; margin-top: 20px;">Signup</button></center>
+  </form>
+  <br>
+  <span id="tiny-message"> Don't have an account? <a href="/accounts/login">Log In</a> instead.</span>
+  <br>
+</div>
+</div>
 </body>
 </html>
 

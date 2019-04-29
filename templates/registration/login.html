@@ -26,7 +26,7 @@
     #box {
       margin: 0;
       padding: 5%;
-      width: 60%;
+      width: 40%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -36,10 +36,13 @@
     }
     #heading {
       font-family: 'Abril Fatface';
-      padding-bottom: 40px; 
+      padding: 10px; 
     }
     #tiny-message{
-      font-size: 0.8em;
+      font-size: 0.7em;
+    }
+    #label{
+      font-size: 0.75em;
     }
   </style>
 </head>
@@ -49,8 +52,15 @@
       <h3 id="heading">Nicestuff</h3>
         <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <br>
+        {% for field in form %}
+        <span>
+          <br><span id="label">{{ field.label_tag }}</span>
+          <center>{{ field }}</center>
+          {% for error in field.errors %}
+            <br><center><span><small style="color: lightcoral; font-size: 0.7em">{{ error }}</small></center></span>
+          {% endfor %}
+        </span>
+      {% endfor %}        <br>
         <center><button type="submit" class="btn btn-success btn-md" style="width: 100%;">Login</button></center>
       </form>
       <br>

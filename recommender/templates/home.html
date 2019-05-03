@@ -191,10 +191,10 @@
       /*==============================================gridarea==============================================*/
 
       .flip-card {
-        margin: 10px;
+        margin: 5px;
         background-color: none;
         width: 300px;
-        height: 300px;
+        height: 320px;
         perspective: 1000px;
         border-radius: 20px;
       }
@@ -229,16 +229,22 @@
         color: black;
         z-index: 2;
         border-radius: 20px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .flip-card-back {
-        background-color: gray;
-        color: black;
+        background-color: rgba(0,0,0,0.8);
+        color: lightgrey;
         transform: rotateY(180deg);
         z-index: 1;
         border-radius: 20px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
       }
 
       #contentwrap {
@@ -248,14 +254,41 @@
         width: 100vw;
       }
 
-      #gridwrap {
+      .sectionheading {
+        font-family: 'Raleway';
+        color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 80vw;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 10px;
+      }
+
+      .gridwrap {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 80vw;
         justify-content: center;
+        padding-bottom: 80px;
       }
 
+      .itemimg {
+        background-color: slategrey;
+        width: 280px;
+        height: 280px;
+        border-radius: 20px;
+      }
+      
+      .btnpricewrap{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: space-around;
+      }
     </style>
   </head>
 
@@ -297,20 +330,471 @@
       </div>
 
       <div id="contentwrap">
-          <div id="gridwrap">
+        <div class="sectionheading">
+          <h3>Nicest in Men's Fashion</h3>
+        </div> 
+        <div class="gridwrap">
+           
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                    <div class="itemimg">
+                      
+                    </div>
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                      Product name
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                      <b>Product name</b>
+                    </div>
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <div class="btnpricewrap">
+                      <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                      <b>&#x20b9; 599</b>
+                      <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                                                                                                                             
+          </div>
+
+          <div class="sectionheading">
+              <h3>Nicest in Women's Fashion</h3>
+            </div> 
+            <div class="gridwrap">
                
-                  <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front" style="width:300px;height:300px; background-color: white">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
                         </div>
-                        <div class="flip-card-back">
-                          <h1>John Doe</h1> 
-                          <p>Architect & Engineer</p> 
-                          <p>We love that guy</p>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
                         </div>
                       </div>
                     </div>
-          </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
+                        <div class="itemimg">
+                          
+                        </div>
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
+                          Product name
+                        </div>
+                      </div>
+                      <div class="flip-card-back">
+                        <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; font-color: white;">
+                          <b>Product name</b>
+                        </div>
+                        <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                        <div class="btnpricewrap">
+                          <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
+                          <b>&#x20b9; 599</b>
+                          <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><3</b></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                                                                                                                                 
+              </div>
         </div>
 
   {% else %}

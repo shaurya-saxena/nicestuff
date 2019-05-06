@@ -22,9 +22,11 @@ class Recommendations(models.Model):
     rec3 = models.IntegerField(db_column='Recommendation 3')
     rec4 = models.IntegerField(db_column='Recommendation 4')
     rec5 = models.IntegerField(db_column='Recommendation 5')
-
-    def __str__(self):
-        return self.name
+    rec6 = models.IntegerField(db_column='Recommendation 6', default='1')
+    rec7 = models.IntegerField(db_column='Recommendation 7', default='2')
+    rec8 = models.IntegerField(db_column='Recommendation 8', default='3')
+    rec9 = models.IntegerField(db_column='Recommendation 9', default='4')
+   
 
     class Meta:
         verbose_name_plural = "Recommendations"

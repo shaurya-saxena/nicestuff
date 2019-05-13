@@ -16,6 +16,7 @@ class Products(models.Model):
     class Meta:
         verbose_name_plural = "Products"
      
+
 class RecommendationsMA(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -27,7 +28,6 @@ class RecommendationsMA(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-   
 class RecommendationsWA(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -39,7 +39,6 @@ class RecommendationsWA(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-      
 class RecommendationsTech(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -51,7 +50,6 @@ class RecommendationsTech(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-   
 class RecommendationsHD(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -63,7 +61,6 @@ class RecommendationsHD(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-   
 class RecommendationsFurn(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -75,7 +72,6 @@ class RecommendationsFurn(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-      
 class RecommendationsWF(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -87,7 +83,6 @@ class RecommendationsWF(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-      
 class RecommendationsBPC(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -99,7 +94,6 @@ class RecommendationsBPC(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-   
 class RecommendationsKD(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -111,7 +105,6 @@ class RecommendationsKD(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-      
 class RecommendationsAccs(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -123,7 +116,6 @@ class RecommendationsAccs(models.Model):
     rec7 = models.IntegerField(db_column='Recommendation 7')
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
-
 class RecommendationsMF(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, db_column='User')
     rec1 = models.IntegerField(db_column='Recommendation 1')
@@ -136,7 +128,13 @@ class RecommendationsMF(models.Model):
     rec8 = models.IntegerField(db_column='Recommendation 8')
     rec9 = models.IntegerField(db_column='Recommendation 9')
    
-    class Meta:
-        verbose_name_plural = "Recommendations"
 
-        
+class TxnHistory(models.Model):
+    txnid = models.IntegerField(db_column='Transaction ID', primary_key=True)
+    pid = models.IntegerField(db_column='Product ID')
+    user = models.IntegerField(db_column='User ID')
+    status = models.BooleanField(db_column='Status')
+    timestamp = models.IntegerField(db_column='Timestamp in seconds since 1 January 2019')
+  
+
+

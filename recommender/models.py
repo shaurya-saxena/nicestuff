@@ -170,11 +170,11 @@ class RecommendationsMF(models.Model):
         verbose_name_plural = "Men's Footwear Recommendations"
     
 class TxnHistory(models.Model):
-    txnid = models.IntegerField(db_column='Transaction ID', primary_key=True)
-    pid = models.IntegerField(db_column='Product ID')
-    user = models.IntegerField(db_column='User ID')
-    status = models.BooleanField(db_column='Status')
-    timestamp = models.IntegerField(db_column='Timestamp in seconds since 1 January 2019')
+    txnid = models.IntegerField(primary_key=True)
+    pid = models.IntegerField()
+    user = models.IntegerField()
+    status = models.BooleanField()
+    timestamp = models.IntegerField()
 
     class Meta:
         verbose_name_plural = "Transaction History"

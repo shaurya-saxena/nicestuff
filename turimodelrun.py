@@ -6,4 +6,6 @@ m1 = tc.load_model('recommendermodel')
 
 results = m1.recommend()
 
-print(results)
+#print(results)
+
+results.export_csv('recommendations.csv')

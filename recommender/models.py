@@ -178,6 +178,7 @@ class TxnHistory(models.Model):
 
     class Meta:
         verbose_name_plural = "Transaction History"
+        db_table = "TxnHistory"
     
 
 

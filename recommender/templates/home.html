@@ -268,10 +268,11 @@
       }
 
       .itemimg {
-        background-color: lightgray;
+        background-color: white;
         width: 280px;
         height: 280px;
         border-radius: 20px;
+        overflow: hidden;
       }
       
       .btnpricewrap{
@@ -364,27 +365,26 @@
           <h3>Nicest across all categories</h3>
         </div> 
         <div class="gridwrap">
-          {% for recommendations in rec_list %}
+          {% for recs in rec_list %}
             <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front" style="width:300px;height:320px; background-color: white">
                     <div class="itemimg">
-                      
-                    </div>
+                      <img src="{{ recs.pid.image_url }}" alt="{{ recs.pid.name }}" height="280px">                    </div>
                     <div class="itemname" style="font-family: 'Raleway'; font-size: 1.1em;">
-                      {{ recommendations.products.name }}
+                      {{ recs.pid.name }}
                     </div>
                   </div>
                   <div class="flip-card-back">
                     <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; color: white;">
-                      <b>{{ recommendations.products.name }}</b>
+                      <b>{{ recs.pid.name }}</b>
                     </div>
                     <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
-                      {{ recommendations.products.desc }}
+                      {{ recs.pid.desc }}
                     </div>
                     <div class="btnpricewrap">
                       <button type="button" class="btn btn-danger" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b>X</b></button>
-                      <b style="font-size: 1.5em; color: white;">&#x20b9; {{ recommendations.products.price }} </b>
+                      <b style="font-size: 1.5em; color: white;">&#x20b9; {{ recs.pid.price }} </b>
                       <button type="button" class="btn btn-success" style="border-radius: 50%; font-size: 2em; width: 60px; height: 60px;"><b><span class="glyphicon glyphicon-heart"></span>	</b></button>
                     </div>
                   </div>

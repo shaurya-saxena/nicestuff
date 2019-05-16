@@ -36,8 +36,6 @@ class Recommendations(models.Model):
         unique_together = (('user', 'rank'))
 
 
-
-
 class TxnHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     pid = models.ForeignKey(Products, on_delete=models.CASCADE)

@@ -1,5 +1,6 @@
 import turicreate as tc 
 import sqlite3 as sql 
+import pandas as pd
 
 connection = sql.connect('db.sqlite3')
 
@@ -12,7 +13,13 @@ results = m1.recommend()
 #results.export_csv('recommendations.csv')
 
 connection = sql.connect('db.sqlite3')
-for row in results:
-    connection.execute('INSERT INTO Recommendations(user, pid, score, rank) VALUES(results[1], results[2], results[3], results[4])',var)
 
-connection.close()
+emptyframe = pd.DataFrame(columns = ['id'])
+emptysframe = graphlab.SFrame(emptyframe)
+final_results = pd.concat([emptyframe, results], axis = 1)
+
+
+print(final_results)
+#final_results.to_sql(connection, 'Recommendations', "Insert")
+
+#connection.close()

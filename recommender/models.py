@@ -22,10 +22,10 @@ class Products(models.Model):
 
 
 class Recommendations(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pid = models.ForeignKey(Products, on_delete=models.CASCADE) 
-    score = models.FloatField()
-    rank = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user')
+    pid = models.ForeignKey(Products, on_delete=models.CASCADE, db_column='pid') 
+    score = models.FloatField(db_column='score')
+    rank = models.IntegerField(db_column='rank')
 
     def __str__(self):
         return "Recommendation " + str(self.rank) + " for " + str(self.user) 

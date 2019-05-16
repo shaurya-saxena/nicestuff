@@ -228,7 +228,7 @@
       }
 
       .flip-card-back {
-        background-color: rgba(0,0,0,0.8);
+        overflow: none;
         color: lightgrey;
         transform: rotateY(180deg);
         z-index: 1;
@@ -265,6 +265,27 @@
         width: 90vw;
         justify-content: center;
         padding-bottom: 80px;
+      }
+
+      .itemlink {
+        font-family: 'Raleway'; 
+        font-size: 1.2em; 
+        color: white;
+      }
+
+      .itemlink:hover {
+        text-decoration: none;
+        color: pink;
+      }
+
+      .itemlink:active {
+        text-decoration: none;
+        color: hotpink;
+      }
+
+      .itemlink:visited {
+        text-decoration: none;
+        color: white;
       }
 
       .itemimg {
@@ -375,11 +396,11 @@
                       {{ recs.pid.name }}
                     </div>
                   </div>
-                  <div class="flip-card-back">
-                    <div class="itemname" style="font-family: 'Raleway'; font-size: 1.2em; color: white;">
-                      <b>{{ recs.pid.name }}</b>
+                  <div class="flip-card-back" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url({{ recs.pid.image_url }}); background-position: center;">
+                    <div>
+                      <a class="itemlink" href="{{ recs.pid.seller_url }}" target=_blank>{{ recs.pid.name }}</a>
                     </div>
-                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px;">
+                    <div class="itemdesc" style="font-family: 'Raleway'; font-size: 0.9em; padding: 10px; width: 280px; height: 150px; overflow: hidden; text-overflow:ellipsis;">
                       {{ recs.pid.desc }}
                     </div>
                     <div class="btnpricewrap">

@@ -1,11 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Recommendations
+from .models import TxnHistory
+from .models import Products
+from django.contrib.auth.decorators import login_required
 
-def index(request):
-    return HttpResponse("Hi, this is the recommender web app")
 
+
+@login_required()
 def home(request):
-    return HttpResponse("This is the homepage")
+    rec_list = Recommendations.objects.filter(user=request.user)[:10]
+    context = {'rec_list': rec_list}
+    return render(request, 'home.html', context)
 
-def redirect(request):
+def history(request):
+    return HttpResponse("You shall be redirected soon")
+
+def favorites(request):
     return HttpResponse("You shall be redirected soon")

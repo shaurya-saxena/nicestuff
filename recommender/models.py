@@ -20,7 +20,6 @@ class Products(models.Model):
         db_table = 'Products'
 
 
-
 class Recommendations(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user')
     pid = models.ForeignKey(Products, on_delete=models.CASCADE, db_column='pid') 
